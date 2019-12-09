@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="18G1012" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Log" representedClassName="Log" syncable="YES">
+        <attribute name="caption" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="entry" optional="YES" attributeType="String"/>
+        <attribute name="media" optional="YES" attributeType="Binary"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="trip" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trip" inverseName="log" inverseEntity="Trip"/>
+    </entity>
+    <entity name="Trip" representedClassName="Trip" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="log" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Log" inverseName="trip" inverseEntity="Log"/>
+    </entity>
+    <elements>
+        <element name="Trip" positionX="-45" positionY="0" width="128" height="73"/>
+        <element name="Log" positionX="-18" positionY="36" width="128" height="133"/>
+    </elements>
+</model>
